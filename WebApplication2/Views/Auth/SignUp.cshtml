@@ -1,0 +1,21 @@
+﻿@model WebApplication2.Models.SignUpModel
+
+@if(ViewContext.ModelState.IsValid == false)
+{
+    <div asp-validation-summary="All" class="form-validation"></div>
+}
+
+<form method="post" class="form-signin" asp-action="SignUp" asp-controller="Auth">
+    <h2>Please register</h2>
+
+    <label class="sr-only">Username</label>
+    <input type="text" class="form-control" placeholder="UserName" asp-for="Username" />
+
+    <label class="sr-only">Password</label>
+    <input type="password" class="form-control" placeholder="UserName" asp-for="Password" />
+
+    <label class="sr-only">Repeat Password</label>
+    <input type="password" class="form-control" placeholder="UserName" asp-for="ReapeatPassword" />
+
+    <button class="btn btn-lg btn-block btn-primary" type="submit">Register</button>
+</form>
